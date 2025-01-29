@@ -27,10 +27,10 @@ address TEXT
 );
 
 CREATE TABLE Orders (
-Order_id INT,
+order_id INT,
 customer_id INT,
-PRIMARY KEY (Order_id ),
-FOREIGN KEY (customer_id) REFERENCES Customers (customer_id),
+PRIMARY KEY (order_id),
+FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
 order_date DATE
 );
 
@@ -39,7 +39,7 @@ detail_id INT,
 Order_id INT,
 book_id INT,
 PRIMARY KEY (detail_id),
-FOREIGN KEY (Order_id) REFERENCES Orders (Order_id),
-FOREIGN KEY (book_id) REFERENCES Books (book_id),
+FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+FOREIGN KEY (book_id) REFERENCES Books(book_id),
 quantity DOUBLE
 );
