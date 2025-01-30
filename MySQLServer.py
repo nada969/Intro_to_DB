@@ -20,7 +20,7 @@ try:
         with MY_DB.cursor() as cursor:
             cursor.execute(create_db_query)
 
-except Exception as e:
+except mysql.connector.Error as e:
     print(e)
 
 # MY_DB = mysql.connector.connect(
