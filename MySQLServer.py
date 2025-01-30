@@ -1,19 +1,24 @@
 # from mysql.connector import connect , Error
 import mysql.connector
 try:
-    MY_DB = mysql.connector.connect(
+    
+    with mysql.connector.connect(       
         host="localhost",
         user="Nada",
         password="0752",
         database="alx_book_store"
-    )
+    ) as MY_DB:
     # with connect(
     #     host="localhost",
     #     user="Nada",
     #     password="0752",
     #     database="alx_book_store"
     # ) as connection: 
-    print(f'Database \'{MY_DB.database}\' created successfully!');
+        # cursor = MY_DB.cursor()
+        # print(f'Database \'{MY_DB.database}\' created successfully!')
+        create_db_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
+        with MY_DB.cursor() as cursor:
+            cursor.execute(create_db_query)
 
 except Exception as e:
     print(e)
