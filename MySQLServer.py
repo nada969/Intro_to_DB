@@ -1,15 +1,21 @@
-from mysql.connector import connect , Error
-
+# from mysql.connector import connect , Error
+import mysql.connector
 try:
-    with connect(
+    MY_DB = mysql.connector.connect(
         host="localhost",
         user="Nada",
         password="0752",
         database="alx_book_store"
-    ) as connection: 
-        print(f'Database \'{connection.database}\' created successfully!');
+    )
+    # with connect(
+    #     host="localhost",
+    #     user="Nada",
+    #     password="0752",
+    #     database="alx_book_store"
+    # ) as connection: 
+    print(f'Database \'{MY_DB.database}\' created successfully!');
 
-except Error as e:
+except Exception as e:
     print(e)
 
 # MY_DB = mysql.connector.connect(
