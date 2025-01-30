@@ -18,7 +18,7 @@ FOREIGN KEY (author_id) REFERENCES Authors (author_id)
 );
 
 
-CREATE TABLE Customers (
+CREATE TABLE customer(
 customer_id INT,
 PRIMARY KEY (customer_id ),
 customer_name VARCHAR(215),
@@ -30,7 +30,7 @@ CREATE TABLE Orders (
 order_id INT,
 customer_id INT,
 PRIMARY KEY (order_id),
-FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
 order_date DATE
 );
 
