@@ -2,8 +2,8 @@
 import mysql.connector
 import os
 try:
-
-    with mysql.connector.connect(       
+    
+    MY_DB = mysql.connector.connect(
         host="localhost",
         user="Nada",
         # user = os.environ.get('DB_USER'),
@@ -17,11 +17,7 @@ try:
     #     password="0752",
     #     database="alx_book_store"
     # ) as connection: 
-        # cursor = MY_DB.cursor()
-        # print(f'Database \'{MY_DB.database}\' created successfully!')
-        create_db_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"   ####sql code
-        with MY_DB.cursor() as cursor:
-            cursor.execute(create_db_query)
+    print(f'Database \'{MY_DB.database}\' created successfully!');
 
 except mysql.connector.Error as e:
     print(e)
